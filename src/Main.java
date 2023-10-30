@@ -1,17 +1,39 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.//Mihaela vrijnknkea comentariu
-        System.out.printf("Hello and welcome!");
+        //declaram ceva variabile
+        String i = "test"; //daca nu se atribuie nimic e NULL
+        int a = 5; //daca nu se atribuie nimic e 0
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        //introduc o conditie
+        if (a>=5) {
+            System.out.println("Numar >= ca 5");
+        } else {
+            System.out.println("Numar <= ca 5");
+        }
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        //declar o lista
+        List<String> listaLocatie = new ArrayList<>();
+        listaLocatie.add("Chisinau");
+        listaLocatie.add("Causeni");
+        System.out.println("Locatiile in care am locuit = " + listaLocatie.get(1) + " si " + listaLocatie.get(0));
+
+        //utilizez unstream pentru a filtra elementele din lista
+        List<String> rezultatFiltrat = listaLocatie.stream()
+                .filter(n -> n.length() == 7 )
+                .collect(Collectors.toList());
+        System.out.println("Orasul cu 7 litere = "+ rezultatFiltrat);
+
+        //arunc o exceptie
+        try {
+            int rezultat = 5/0;
+        } catch (ArithmeticException r) {
+            System.out.println("A aparut o exceptie" + r.getMessage());
         }
     }
 }
