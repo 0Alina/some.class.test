@@ -6,7 +6,7 @@ public class SAKURA {
     public String getSpecie() {
         return specie;
     }
-    public void setSpecie() {
+    public void setSpecie(String specie) {
         this.specie = specie;
     }
     @Override

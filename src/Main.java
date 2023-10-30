@@ -35,5 +35,20 @@ public class Main {
         } catch (ArithmeticException r) {
             System.out.println("A aparut o exceptie" + r.getMessage());
         }
+
+        // creeez cate o instanta pentru clasele create
+        SAKURA SAKURA = new SAKURA("cires japonez");
+        System.out.println("Sakura" + SAKURA);
+
+        ONIGIRI ONIGIRI = new ONIGIRI("ton");
+        System.out.println("Onigiri" + ONIGIRI);
+
+        // Setter (seteaza o noua valoare membrelor de date "specie" si "umplututra")
+        SAKURA.setSpecie("cires american");
+        ONIGIRI.setUmplutura("kimchi");
+
+        // Getter (returneaza valoare pe care am modificat-o cu setter-ul)
+        System.out.println("Alternativa sakurei clasice = " + SAKURA.getSpecie());
+        System.out.println("Alternativa onigiri-ului cu ton = " + ONIGIRI.getUmplutura());
     }
 }
